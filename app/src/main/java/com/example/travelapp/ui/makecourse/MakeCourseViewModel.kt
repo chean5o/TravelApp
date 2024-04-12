@@ -9,5 +9,6 @@ class MakeCourseViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
         value = "코스 생성 화면 (깃 연동 확인)"
     }
+
     val text: LiveData<String> = _text
 }
