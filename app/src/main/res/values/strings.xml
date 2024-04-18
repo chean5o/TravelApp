@@ -3,5 +3,6 @@
     <string name="title_map">Map</string>
     <string name="title_home">Home</string>
     <string name="title_makecourse">Course maker</string>
-    <string name="baseUrl">http://192.168.35.180:5000</string>
+<!--    <string name="flaskUrl">http://172.30.82.94:5000</string>-->
+<!--    <string name="nodeUrl">http://172.30.82.94:3000</string>-->
 </resources>

@@ -2,9 +2,23 @@ package com.example.travelapp.flask_server
 
 import com.google.gson.JsonObject
 import retrofit2.Call
-import retrofit2.http.GET
-
+import retrofit2.http.*
+data class ResponseDC(var result:String? = null)
 interface RetrofitAPI {
-    @GET("/todos") // 서버에 GET 요청을 할 주소 입력
-    fun getTodoList(): Call<JsonObject> // json 파일을 가져오는 메소드
+    /*node*/
+    @GET("/")
+    fun getRequest(@Query("name") name: String): Call<ResponseDC>
+
+    @FormUrlEncoded
+    @POST("/")
+    fun postRequest(@Field("id")id: String,
+                    @Field("password")password: String):Call<ResponseDC>
+
+    @FormUrlEncoded
+    @PUT("/{id}")
+    fun putRequest(@Path("id")id: String,
+                   @Field("content")content: String): Call<ResponseDC>
+
+    @DELETE("/{id}")
+    fun deleteRequest(@Path("id")id: String): Call<ResponseDC>
 }
