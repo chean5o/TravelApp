@@ -1,26 +1,29 @@
 package com.example.travelapp.ui.map
 
+// import java.util.jar.Manifest
+import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.travelapp.R
 import com.example.travelapp.databinding.FragmentMapBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import net.daum.mf.map.api.MapView
 import net.daum.mf.map.api.MapPoint
-// import java.util.jar.Manifest
-import android.Manifest
+import net.daum.mf.map.api.MapView
 
 class MapFragment : Fragment() {
 
+    private var addedView: View? = null
     private var _binding: FragmentMapBinding? = null
 
     // This property is only valid between onCreateView and
@@ -67,6 +70,23 @@ class MapFragment : Fragment() {
         binding.mapView.addView(mapView)
 
         // initializeKakaoMap()
+
+        mapView.setOnTouchListener { _, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                val x = event.x
+                val y = event.y
+
+                // 이전에 추가된 뷰가 있다면 삭제
+                addedView?.let {
+                    binding.mapView.removeView(it)
+                    addedView = null
+                }
+
+                // 클릭 지점에 새로운 뷰 추가
+                addViewToMap(x, y)
+            }
+            true
+        }
 
         return root
     }
@@ -116,6 +136,19 @@ class MapFragment : Fragment() {
             val mapViewContainer = binding.mapView as ViewGroup
             mapViewContainer.addView(mapView)
         }*/
+
+    private fun addViewToMap(x: Float, y: Float) {
+        // 모서리 둥근 사각형의 뷰 생성
+        val view = View(requireContext())
+        view.setBackgroundResource(R.drawable.rounded_rectangle_shape) // 모서리 둥근 사각형의 배경 설정
+        val layoutParams = FrameLayout.LayoutParams(800, 600) // 사각형의 크기 설정
+        layoutParams.leftMargin = x.toInt() - 100 // 중심 위치 설정
+        layoutParams.topMargin = y.toInt() - 50
+        binding.mapView.addView(view, layoutParams)
+
+        // 추가된 뷰를 추적하는 변수 업데이트
+        addedView = view
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
