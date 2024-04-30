@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!--    <com.google.android.material.slider.Slider-->
+    <!--        android:id="@+id/slider"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:valueFrom="1"-->
+    <!--        android:valueTo="1000"-->
+    <!--        android:stepSize="1"-->
+    <!--        app:labelBehavior="withinBounds"-->
+    <!--        android:layout_marginBottom="16dp"/>-->
+
+    <!-- 질문 1 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="질문 1: 도시? 자연?"
+        android:layout_marginBottom="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        <!--        android:background="@drawable/box">-->
+        <Button
+            android:id="@+id/yesButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="예"
+            android:background="@drawable/button"
+            android:tag="yes1"/>
+        <Button
+            android:id="@+id/noButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="아니오"
+            android:background="@drawable/button"
+            android:tag="no1"/>
+    </LinearLayout>
+
+    <!-- 질문 2 -->
+    <!-- 질문 1의 구조를 반복하여 질문 2, 3, 4를 구성합니다. -->
+    <!-- 각 태그는 yes2, no2; yes3, no3; yes4, no4 로 설정합니다. -->
+    <!-- 예시: -->
+    <!-- 질문 2 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="질문 2: [질문 내용]"
+        android:layout_marginBottom="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        <Button
+            android:id="@+id/yesButton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="예"
+            android:background="@drawable/button"
+            android:tag="yes2"/>
+        <Button
+            android:id="@+id/noButton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="아니오"
+            android:background="@drawable/button"
+            android:tag="no2"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="질문 3: [질문 내용]"
+        android:layout_marginBottom="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        <Button
+            android:id="@+id/yesButton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="예"
+            android:background="@drawable/button"
+            android:tag="yes3"/>
+        <Button
+            android:id="@+id/noButton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="아니오"
+            android:tag="no3"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="질문 4: [질문 내용]"
+        android:layout_marginBottom="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        <Button
+            android:id="@+id/yesButton4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="예"
+            android:tag="yes4"/>
+        <Button
+            android:id="@+id/noButton4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="아니오"
+            android:tag="no4"/>
+    </LinearLayout>
+
+    <!-- 질문 3과 4에 대해서도 같은 방식으로 추가합니다. -->
+
+</LinearLayout>
