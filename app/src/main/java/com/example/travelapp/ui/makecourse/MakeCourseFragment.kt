@@ -19,6 +19,14 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+//import android.os.Bundle
+//import android.view.View
+//import androidx.fragment.app.Fragment
+import com.google.android.material.slider.Slider
+import androidx.core.content.ContextCompat
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+
 
 class MakeCourseFragment : Fragment() {
 
@@ -34,6 +42,21 @@ class MakeCourseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // 슬라이더 인스턴스를 찾음
+//        val slider = view.findViewById<Slider>(R.id.budgetSlider)
+
+//        val radioGroup = view.findViewById<RadioGroup>(R.id.radioGroup)
+//        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+//            when (checkedId) {
+//                R.id.radioMale -> {
+//                    // 남성이 선택되었을 때의 로직
+//                }
+//                R.id.radioFemale -> {
+//                    // 여성이 선택되었을 때의 로직
+//                }
+//            }
+//        }
 
         // Retrofit 인스턴스 생성
         val retrofit = Retrofit.Builder()
