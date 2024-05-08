@@ -55,4 +55,6 @@ dependencies {
     implementation(files("libs/libDaumMapAndroid.jar"))
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("com.google.android.gms:play-services-location:18.0.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.6.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.6.0")
 }
