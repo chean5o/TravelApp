@@ -78,4 +78,5 @@ dependencies {
     implementation ("androidx.compose.ui:ui:1.0.1")
     implementation ("androidx.compose.material:material:1.0.1")
 //    implementation ("androidx.material3:material3:1.4.0")
+    implementation ("com.google.android.material:material:1.4.0")
 }
